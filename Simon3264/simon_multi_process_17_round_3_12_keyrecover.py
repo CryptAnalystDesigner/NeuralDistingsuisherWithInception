@@ -426,12 +426,12 @@ def test(device,n=1, pairs=8,nr=17, num_structures=2**9, it=300, cutoff1=60, cut
             # print("dont have")
             arr1[i]=0xffff
             arr2[i]=0xffff
-            continue
+            
         else :
             print("the device "+str(device)+" td == 1 indice "+str(np.where(td==1)))
         
-        pt0 = pt0[np.where(td==1)]
-        pt1 = pt1[np.where(td==1)]
+#         pt0 = pt0[np.where(td==1)]
+#         pt1 = pt1[np.where(td==1)]
         
         pt0,pt1,_,_ = make_structure(pt0,pt1,neutral_bits=[[2],[3],[4]])
 
