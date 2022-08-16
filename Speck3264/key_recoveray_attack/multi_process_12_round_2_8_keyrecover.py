@@ -423,7 +423,7 @@ def test(device,n=5, pairs=8,nr=12, num_structures=500, it=3000, cutoff1=-5, cut
         if g == 0:
             arr1[i]=0xffff
             arr2[i]=0xffff
-            continue
+           
         else :
             print("the device "+str(device)+" td == 1 indice "+str(np.where(td==1)))
 
