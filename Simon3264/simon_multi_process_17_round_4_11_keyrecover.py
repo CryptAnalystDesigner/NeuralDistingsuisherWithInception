@@ -512,7 +512,7 @@ def test(device,n=5, pairs=8,nr=17, num_structures=2**10, it=2**11, cutoff1=40, 
             # print("dont have")
             arr1[i]=0xffff
             arr2[i]=0xffff
-            continue
+         
         else :
             print("the device "+str(device)+" td == 1 indice "+str(np.where(td==1)))
         
