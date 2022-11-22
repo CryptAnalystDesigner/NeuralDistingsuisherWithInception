@@ -42,13 +42,13 @@ def first_stage(n,num_rounds=9,pairs=8):
     batch_size = bs * strategy.num_replicas_in_sync
     with strategy.scope():
 
-        net = load_model("model_7r_depth5_num_epochs20_pairs2.h5")
+        net = load_model(wdir+"model_7r_depth5_num_epochs20_pairs2.h5")
         net_json = net.to_json()
 
         net_first = model_from_json(net_json)
         # net_first.compile(optimizer=Adam(learning_rate = 10**-4), loss='mse', metrics=['acc'])
         net_first.compile(optimizer='adam', loss='mse', metrics=['acc'])
-        net_first.load_weights("model_7r_depth5_num_epochs20_pairs2.h5")
+        net_first.load_weights(wdir+"model_7r_depth5_num_epochs20_pairs2.h5")
 
     X, Y = sp.make_train_data(n, nr=num_rounds-3, pairs=pairs,diff=(0x8000, 0x840a))
     X_eval,Y_eval = sp.make_train_data(test_n, nr=num_rounds-3, pairs=pairs,diff=(0x8000, 0x840a))
